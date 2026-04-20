@@ -1,0 +1,40 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "api",
+	"main": "src/app.ts",
+	"compatibility_date": "2026-04-02",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "./public"
+	},
+	"d1_databases": [
+		{
+			"binding": "D1",
+			"database_name": "d1-prod",
+			"database_id": "51c7b5ec-d9fb-5345-4645-cb4017fd2a90",
+			"migrations_dir": "./src/lib/database/d1/migrations"
+		}
+	],
+	"ratelimits": [
+		{
+			"name": "DEFAULT_RATE_LIMITER",
+			"namespace_id": "1001",
+			"simple": {
+				"limit": 30,
+				"period": 60
+			}
+		}
+	],
+	"observability": {
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": true
+		}
+	}
+}

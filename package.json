@@ -1,0 +1,26 @@
+{
+	"name": "backend-starter",
+	"type": "module",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+		"db:migrate": "bunx wrangler d1 migrations apply d1-prod",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.45.2",
+		"hono": "^4.12.14",
+		"zod": "^4.3.6"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.14.8",
+		"@cloudflare/workers-types": "^4.20260420.1",
+		"@types/node": "^25.6.0",
+		"drizzle-kit": "^0.31.10",
+		"vitest": "^4.1.4",
+		"wrangler": "^4.84.0"
+	}
+}
