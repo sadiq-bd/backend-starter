@@ -150,6 +150,8 @@ const splitResponse = (resp: Response, ttl: number) => {
 const revalidateClientHeaders = (resp: Response) => {
 	resp.headers.delete(CACHE_STALE_AT_HEADER);
 	resp.headers.delete("cache-control");
+	resp.headers.delete("last-modified");
+
 	resp.headers.set("cache-control", "max-age=0, must-revalidate");
 	return resp;
 };
