@@ -1,3 +1,5 @@
+<p align="left"> <img src="https://api.sadiq.workers.dev/app/github/repo/backend-starter/views" alt="" /> </p>
+
 # Backend Starter
 
 A production-ready backend starter built on **Hono** + **Cloudflare Workers**, with **Drizzle ORM** for the database layer and **Zod** for validation.
